@@ -31,6 +31,7 @@ NOTES:
 - The notebooks expect to have an environment with all dependencies pre-installed.
 - The batch run notebook has hardcoded the value of the Jupyter virtual environment to tf-cpu. Please adjust according to your environment settings.
 - The Flask sample app assumes using an NN model, it may however be easily adapted to use any model. Please ensure you use the Flask app with the same python virtual environment settings (libraries) as used during training of the models.
+- To use the Flask app, an NN model needs to be trained and the corresponding .h5 model file and .pkl for the scalers (feature space and target) need to be placed in the app folder
 
 The contents of this repository are provided "as-is" without further support. In other words, it is expected of the user to have sufficient Python (and ML) related knowledge to understand what the code does and how it works.
 
