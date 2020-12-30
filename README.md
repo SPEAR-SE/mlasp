@@ -11,7 +11,7 @@ The feature space (from the CSV files) is as follows (with full details provided
 
 The target variable used in model prediction is 'TotalMessages' (as the number of messages recorded by Kafka over the time of load test).
 
-It also contains a Flask based model application for how a trained model may be used for finding a configuration setting that may produce a desired target value. The flask app uses random values from a search space interval to generate configurations and measure the prediction against a designated target with a specified error margin. The number of search iteration as well as the error margin are part of the search criteria. The app exposes both a UI and REST API interface (accepting POST requests with JSON payload). To test for the defaults (i.e. http://localhost:5000/api/predict) , the following query may be initiated (i.e., using Postman for testing purposes):
+The repository also contains a Flask based model application for how a trained model may be used for finding a configuration setting that may produce a desired target value. The flask app uses random values from a search space interval to generate configurations and measure the prediction against a designated target with a specified error margin. The number of search iteration as well as the error margin are part of the search criteria. The app exposes both a UI and REST API interface (accepting POST requests with JSON payload). To test for the defaults (i.e. http://localhost:5000/api/predict) , the following query may be initiated (i.e., using Postman for testing purposes):
 ```json
 {
  "BackgroundThreads": "5, 30",
@@ -28,7 +28,7 @@ It also contains a Flask based model application for how a trained model may be 
  "Precision": "2.9"
 }
 ```
-Note that ranges are applicable for the feature values only when two values are provided (i.e. BackgroundThreads will have random integer values between 5 and 30), and a choice of possible values is used when multiple entries are provided (i.e. ThreadsClient will have one of the given samples - note that ThreadsClient here is using normalized values, that's why they are float numbers).
+Note that in case of the Flask app, ranges are applicable for the feature values only when two values are provided (i.e. BackgroundThreads will have random integer values between 5 and 30), and a choice of possible values is used when multiple entries are provided (i.e. ThreadsClient will have one of the given samples - note that ThreadsClient here is using normalized values, that's why they are float numbers).
 
 NOTES:
 - The source code and test data is provided only for the open source system
