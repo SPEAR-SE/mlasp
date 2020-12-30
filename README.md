@@ -6,7 +6,7 @@ Note there are independent CSV files with raw data which are processed using dif
 The feature space (from the CSV files) is as follows: 'BackgroundThreads', 'LogCleanerThreads', 'NumIoThreads', 'NumNetworkThreads', 'NumPartitions', 'NumNodes', 'NumReplicaFetchers', 'ThreadsClient', 'MessageSize'.
 The target variable used in model prediction is 'TotalMessages'
 
-It also contains a Flask based model application for how a trained model may be used for finding a configuration setting that may produce a desired target value. The flask app uses random values from a search space interval to generate configurations and measure the prediction against a designated target with a specified error margin. The number of search iteration as well as the error margin are part of the search criteria. The app exposes both a UI and API interface. To test for the defaults, the following query may be initiated (i.e., using Postman for testing purposes):
+It also contains a Flask based model application for how a trained model may be used for finding a configuration setting that may produce a desired target value. The flask app uses random values from a search space interval to generate configurations and measure the prediction against a designated target with a specified error margin. The number of search iteration as well as the error margin are part of the search criteria. The app exposes both a UI and REST API interface (accepting POST requests with JSON payload). To test for the defaults (i.e. http://localhost:5000/api/predict) , the following query may be initiated (i.e., using Postman for testing purposes):
 ```json
 {
  "BackgroundThreads": "5, 30",
