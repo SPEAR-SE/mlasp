@@ -25,7 +25,7 @@ The repository also contains a Flask based model application for how a trained m
  "MessageSize": "10240, 10240",
  "Epochs": "100",
  "SearchTargetValue": "500000",
- "Precision": "2.9"
+ "Precision": "3.9"
 }
 ```
 Note that in case of the Flask app, ranges are applicable for the feature values only when two values are provided (i.e. BackgroundThreads will have random integer values between 5 and 30), and a choice of possible values is used when multiple entries are provided (i.e. ThreadsClient will have one of the given samples - note that ThreadsClient here is using normalized values, that's why they are float numbers).
