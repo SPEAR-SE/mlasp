@@ -3,8 +3,13 @@ This repository contains the open-source system experimental data (code and test
 
 The provided source code includes the feature selection and cleanup steps required before feeding the input data to various ML algorithms.
 Note there are independent CSV files with raw data which are processed using different feature engineering techniques to create the data sets for model trainings.
-The feature space (from the CSV files) is as follows: 'BackgroundThreads', 'LogCleanerThreads', 'NumIoThreads', 'NumNetworkThreads', 'NumPartitions', 'NumNodes', 'NumReplicaFetchers', 'ThreadsClient', 'MessageSize'.
-The target variable used in model prediction is 'TotalMessages'
+The feature space (from the CSV files) is as follows (with full details provided in the paper TODO: add link): 
+- Kafka broker configuration parameters: 'BackgroundThreads', 'LogCleanerThreads', 'NumIoThreads', 'NumNetworkThreads', 'NumReplicaFetchers' (see Apache Kafka documentation for details)
+- Kafka cluster parameters: 'NumNodes' (the number of nodes in the Kafka cluster)
+- Kafka topic parameters: 'NumPartitions' (for the number or partitions for a kafka topic)
+- Kafka producer (client) parameters (used to control the load generation to Kafka): 'ThreadsClient' (number of threads writing to Kafka), 'MessageSize' (the size of the message sent to Kafka).
+
+The target variable used in model prediction is 'TotalMessages' (as the number of messages recorded by Kafka over the time of load test).
 
 It also contains a Flask based model application for how a trained model may be used for finding a configuration setting that may produce a desired target value. The flask app uses random values from a search space interval to generate configurations and measure the prediction against a designated target with a specified error margin. The number of search iteration as well as the error margin are part of the search criteria. The app exposes both a UI and REST API interface (accepting POST requests with JSON payload). To test for the defaults (i.e. http://localhost:5000/api/predict) , the following query may be initiated (i.e., using Postman for testing purposes):
 ```json
