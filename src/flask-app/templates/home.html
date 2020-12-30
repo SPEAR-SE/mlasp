@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Kafka Configuration Prediction Input</title>
+</head>
+<body>
+<h2>Please enter your configuration search space and target:</h2>
+<form method="post">
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+    <table>
+        <tr>
+            <td> {{ form.BackgroundThreads.label }} </td>
+            <td> {{ form.BackgroundThreads }} </td>
+        </tr>
+        <tr>
+            <td> {{ form.LogCleanerThreads.label }} </td>
+            <td> {{ form.LogCleanerThreads }} </td>
+        </tr>
+        <tr>
+            <td> {{ form.NumIoThreads.label }} </td>
+            <td> {{ form.NumIoThreads }} </td>
+        </tr>
+        <tr>
+            <td> {{ form.NumNetworkThreads.label }} </td>
+            <td> {{ form.NumNetworkThreads }} </td>
+        </tr>
+        <tr>
+            <td> {{ form.NumPartitions.label }} </td>
+            <td> {{ form.NumPartitions }} </td>
+        </tr>
+        <tr>
+            <td> {{ form.NumNodes.label }} </td>
+            <td> {{ form.NumNodes }} </td>
+        </tr>
+        <tr>
+            <td> {{ form.NumReplicaFetchers.label }} </td>
+            <td> {{ form.NumReplicaFetchers }} </td>
+        </tr>
+        <tr>
+            <td> {{ form.ThreadsClient.label }} </td>
+            <td> {{ form.ThreadsClient }} </td>
+        </tr>
+        <tr>
+            <td> {{ form.MessageSize.label }} </td>
+            <td> {{ form.MessageSize }} </td>
+        </tr>
+        <tr>
+            <td> {{ form.Epochs.label }} </td>
+            <td> {{ form.Epochs }} </td>
+        </tr>
+        <tr>
+            <td> {{ form.Precision.label }} </td>
+            <td> {{ form.Precision }} </td>
+        </tr>
+        <tr>
+            <td> {{ form.SearchTargetValue.label }} </td>
+            <td> {{ form.SearchTargetValue }} </td>
+        </tr>
+    </table>
+    <br>
+    {{ form.submit }}
+</form>
+</body>
+</html>
