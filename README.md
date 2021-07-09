@@ -3,7 +3,7 @@ This repository contains the open-source system experimental data (code and test
 
 The provided source code includes the feature selection and cleanup steps required before feeding the input data to various ML algorithms.
 Note there are independent CSV files with raw data which are processed using different feature engineering techniques to create the data sets for model trainings.
-The feature space (from the CSV files) is as follows (with full details provided in the paper TODO: add link): 
+The feature space (from the CSV files) is as follows (with full details provided in the paper TODO: https://link.springer.com/article/10.1007/s10664-021-09994-0): 
 - Kafka broker configuration parameters: 'BackgroundThreads', 'LogCleanerThreads', 'NumIoThreads', 'NumNetworkThreads', and 'NumReplicaFetchers' (see Apache Kafka documentation for details)
 - Kafka cluster parameters: 'NumNodes' (the number of nodes in the Kafka cluster)
 - Kafka topic parameters: 'NumPartitions' (for the number or partitions for a kafka topic)
